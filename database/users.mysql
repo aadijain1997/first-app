@@ -1,0 +1,38 @@
+-- phpMyAdmin SQL Dump
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `username` varchar(10) NOT NULL UNIQUE,
+  `password` varchar(225) NOT NULL,
+  `created_at`  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `email` varchar(225) NOT NULL,
+  `token` varchar(225) NOT NULL,
+  `status` varchar(225) NOT NULL,
+  `user_type` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET= utf8;
+
+CREATE TABLE IF NOT EXISTS `assigned_task` (
+  `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `project_deadline` date NOT NULL,
+  `project_name` varchar(50) NOT NULL,
+  `user_id` varchar(100) NOT NULL,
+  `project_issue_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+​
+--
+-- Dumping data for table `assigned_task`
+--
+​
+INSERT INTO `assigned_task` (`id`, `project_deadline`, `project_name`, `user_id`, `project_issue_date`) VALUES
+(17, '2020-06-11', 'Online Shopping system', '2', '2020-06-10'),
+(18, '2020-06-12', 'Chat application', '3', '2020-06-10'),
+(21, '2020-06-18', 'Edison', '2', '2020-06-15'),
+(22, '2020-06-23', 'Facebook', '4', '2020-06-15'),
+(23, '2020-06-18', 'Edison', '23', '2020-06-15');
+​
+
+​
+
+
+
+​
